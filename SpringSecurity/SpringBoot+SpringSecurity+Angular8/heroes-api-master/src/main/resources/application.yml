@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: @project.profile@
+  banner:
+    charset: utf-8
+    image:
+      location: classpath:banner.jpg
+    location: classpath:banner.txt
+  messages:
+    encoding: UTF-8
+    basename: messages
+  resources:
+    add-mappings: true
+
+management:
+  server:
+    port: 8090
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+info:
+  app:
+    name: heroes
+    version: 1.0
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /api-docs
+
+api:
+  base-path: /api
+
+cors:
+  allowed-origins: "*"
+  allowed-methods: GET,POST,DELETE,PUT,OPTIONS
+  allowed-headers: Accept,Accept-Encoding,Accept-Language,Authorization,Connection,Content-Type,Host,Origin,Referer,User-Agent,X-Requested-With
+
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 7200
+  issuer: ITRunner
+  authentication-path: /api/auth

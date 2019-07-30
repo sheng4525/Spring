@@ -1,0 +1,24 @@
+# 服务器端口
+server:
+  port: 8080
+spring:
+  # 应用名称
+  application:
+    name: spring-security-client
+  # 数据源
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://172.18.2.15:3306/test_user
+    driver-class-name: com.mysql.jdbc.Driver
+  # jpa配置
+  jpa:
+    show-sql: true #数据库操作时显示sql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect #数据库平台
+    hibernate:
+      ddl-auto: update #数据库增量更新
+
+  
+  
+
+    

@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+# restore build artifacts
+if [ -d /tmp/artifacts/.m2 ]; then
+    echo "restore build artifacts"
+    mv /tmp/artifacts/.m2 $HOME/.
+fi
+
+# move the application source
+mv /tmp/src $HOME/src
+
+# build the application artifacts
+pushd $HOME/src
+mvn clean package -Pdev -Dmaven.test.skip=true
+popd
+
+# move the artifacts
+mv $HOME/src/target/heroes-api-1.0.0.jar $HOME/
+rm -rf $HOME/src

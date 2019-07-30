@@ -1,0 +1,31 @@
+server:
+  port: 8081
+cors:
+  allowed-origins: itrunner.org
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect #数据库平台
+    hibernate:
+      ddl-auto: update  # update更新表，none不更新表
+    properties:
+      hibernate:
+        default_schema: pengsheng
+        format_sql: true  #数据库操作时显示sql
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: true
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.18.2.15:3306/test_user?useUnicode=true&characterEncoding=UTF8
+    username: root
+    password: 123456
+    initialization-mode: never  #启动时是否初始化数据 ,在resources下创建data.sql文件,命名格式data-${platform}.sql，比如data-h2.sql、data-postgresql.sql
+
+
+  
+  
+
+    

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: heroes-api-pipeline
+spec:
+  source:
+    git:
+      uri: "https://github.com/sunjc/heroes-api"
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline

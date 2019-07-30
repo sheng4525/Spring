@@ -1,0 +1,21 @@
+#!/bin/bash -e
+
+# move the application source
+mv /tmp/src $HOME/src
+
+# restore build artifacts
+if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+    mv /tmp/artifacts/* $HOME/src
+fi
+
+# build the application artifacts
+pushd $HOME/src
+npm install
+ng build --prod --base-href=/heroes/
+
+# Install the artifacts
+mv dist /var/www/html/heroes
+mv node_modules $HOME/node_modules
+popd
+
+rm -rf $HOME/src

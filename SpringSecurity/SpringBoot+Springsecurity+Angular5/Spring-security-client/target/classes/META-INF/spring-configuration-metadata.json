@@ -1,0 +1,64 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.spring.config.Config",
+      "name": "",
+      "type": "com.spring.config.Config"
+    },
+    {
+      "sourceType": "com.spring.config.Config",
+      "name": "cors",
+      "sourceMethod": "public com.spring.config.Config.Cors getCors() ",
+      "type": "com.spring.config.Config$Cors"
+    },
+    {
+      "sourceType": "com.spring.config.Config",
+      "name": "jwt",
+      "sourceMethod": "public com.spring.config.Config.Jwt getJwt() ",
+      "type": "com.spring.config.Config$Jwt"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.spring.config.Config$Cors",
+      "name": "cors.allowed-headers",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.spring.config.Config$Cors",
+      "name": "cors.allowed-methods",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.spring.config.Config$Cors",
+      "name": "cors.allowed-origins",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.spring.config.Config$Jwt",
+      "name": "jwt.authentication-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.spring.config.Config$Jwt",
+      "name": "jwt.expiration",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.spring.config.Config$Jwt",
+      "name": "jwt.header",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.spring.config.Config$Jwt",
+      "name": "jwt.issuer",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.spring.config.Config$Jwt",
+      "name": "jwt.secret",
+      "type": "java.lang.String"
+    }
+  ]
+}
