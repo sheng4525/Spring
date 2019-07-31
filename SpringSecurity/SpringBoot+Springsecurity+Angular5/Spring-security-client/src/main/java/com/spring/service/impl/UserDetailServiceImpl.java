@@ -5,6 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
+
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,12 +26,14 @@ import com.spring.util.AuthorityUtil;
  * @author pengsheng
  *
  */
+@CacheConfig(cacheNames = "user") // 类级别缓存，设置缓存 key 前缀之类的
 @Service
 public class UserDetailServiceImpl implements BizUserService {
 
 	@Resource
 	BizUserRepository bizUserRepository;
 	
+	//value属性为key指定前缀
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		BizUser bizUser = bizUserRepository.findByUsername(username);
@@ -45,6 +52,11 @@ public class UserDetailServiceImpl implements BizUserService {
 				user.getAccountNonLocked(), AuthorityUtil.createGrantedAuthorities(user.getRoleList()));
     }
 
+	/**
+	 * 触发缓存入口
+	 * 方法级别注解，根据 key 查询缓存
+	 */
+	@Cacheable(value = "user",key = "'createbizuser'+#user")
 	@Override
 	public BizUser createBizUser(BizUser user) {
 		try {
@@ -67,16 +79,32 @@ public class UserDetailServiceImpl implements BizUserService {
 		return null;
 	}
 
+	/**
+	 * 更新缓存
+	 * 用于更新缓存，每次调用都会想 db 请求，缓存数据
+	 * value 表示类级别缓存
+	 */
+	@CachePut(value = "user", key = "'findBizUser'")
 	@Override
 	public List<BizUser> findBizUser() {
 		return bizUserRepository.findAll();
 	}
-
+	
+	/**
+	 * 根据 key 删除缓存中的数据。allEntries=true 表示删除缓存中所有数据
+	 */
+	@CacheEvict(value = "user", key = "'deleteBizUser'+#id",allEntries=false)
 	@Override
 	public void deleteBizUser(Long id) {
 		bizUserRepository.deleteById(id);
 	}
 
+	/**
+	 * 更新缓存
+	 * 用于更新缓存，每次调用都会想 db 请求，缓存数据
+	 * value 表示类级别缓存
+	 */
+	@CachePut(value = "user", key = "'bizuser'+#user.getId()")
 	@Override
 	public Boolean updateBizUser(BizUser user) {
 		try {
@@ -89,6 +117,12 @@ public class UserDetailServiceImpl implements BizUserService {
 		return false;
 	}
 
+	/**
+	 * 更新缓存
+	 * 用于更新缓存，每次调用都会想 db 请求，缓存数据
+	 * value 表示类级别缓存
+	 */
+	@CachePut(value = "user", key = "'changePassword'+#username")
 	@Override
 	public Boolean changePassword(String username, String newpassword, String oldpassword) {
 		try {
