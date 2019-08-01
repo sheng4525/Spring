@@ -73,7 +73,6 @@ INDEX VERSION 1.131+/home/pengsheng/Documents/Spring-Security/.metadata/.plugins
 3068390092.index
 2175081127.index
 3214207201.index
-719429407.index
 2826425538.index
 1765718825.index
 1235094067.index

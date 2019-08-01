@@ -1,0 +1,6 @@
+启动关闭：  /etc/init.d/redis-server  xx 表示 {start|stop|restart|force-reload|status} 有这些参数
+安装图形客户端命令： sudo snap install redis-desktop-manager   官网安装：https://snapcraft.io/redis-desktop-manager
+redis教程：https://www.redis.net.cn/order/3658.html
+
+
+

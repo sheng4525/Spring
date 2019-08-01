@@ -3321,3 +3321,6 @@ Binding(CTRL+R,
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-07-31 18:23:14.543
 !MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2019-08-01 09:28:20.328
+!MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported

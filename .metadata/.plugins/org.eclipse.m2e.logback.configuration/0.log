@@ -3022,3 +3022,10 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: expected ST
 2019-07-31 18:23:14,685 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2019-07-31 18:23:14,686 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-07-31 18:23:14,686 [Worker-65: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/pengsheng/Documents/Spring-Security/SpringSecurity/SpringBoot+Springsecurity+Angular5/Spring-security-client/src/test/resources
+2019-08-01 09:28:20,829 [Worker-326: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: /home/pengsheng/Documents/Spring-Security/SpringSecurity/SpringBoot+Springsecurity+Angular5/Spring-security-client/src/main/java added.
+2019-08-01 09:28:20,829 [Worker-326: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Source directory: /home/pengsheng/Documents/Spring-Security/SpringSecurity/SpringBoot+Springsecurity+Angular5/Spring-security-client/src/generated-sources/java added.
+2019-08-01 09:28:20,830 [Worker-326: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-01 09:28:20,830 [Worker-326: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2019-08-01 09:28:20,830 [Worker-326: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-08-01 09:28:20,831 [Worker-326: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-08-01 09:28:20,831 [Worker-326: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/pengsheng/Documents/Spring-Security/SpringSecurity/SpringBoot+Springsecurity+Angular5/Spring-security-client/src/test/resources
